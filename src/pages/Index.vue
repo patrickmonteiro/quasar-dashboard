@@ -25,11 +25,34 @@
       </div>
       <div class="col-4">
           <q-card class="fit">
-            <q-card-section>
-              <apex-donut />
-            </q-card-section>
+            <q-tabs
+              v-model="tab"
+              dense
+              class="text-grey"
+              active-color="primary"
+              indicator-color="primary"
+              align="justify"
+              narrow-indicator
+            >
+              <q-tab name="mails" label="Mails" />
+              <q-tab name="alarms" label="Alarms" />
+              <q-tab name="movies" label="Movies" />
+            </q-tabs>
+
+            <q-separator />
+
+            <q-tab-panels v-model="tab" animated>
+              <q-tab-panel name="mails">
+                <div class="text-h6">Mails</div>
+                <apex-donut />
+              </q-tab-panel>
+              <q-tab-panel name="alarms">
+                <div class="text-h6">Mails</div>
+                <apex-donut />
+              </q-tab-panel>
+            </q-tab-panels>
           </q-card>
-      </div>
+        </div>
     </div>
   </q-page>
 </template>
@@ -43,6 +66,7 @@ export default {
   },
   data () {
     return {
+      tab: 'mails',
       series: [{
         name: 'Desktops',
         data: [10, 41, 35, 51, 49, 62, 69, 91, 99]
@@ -101,7 +125,7 @@ export default {
     }
   },
   mounted () {
-    this.setDataLineChart()
+    // this.setDataLineChart()
   },
   methods: {
     getRandomArbitrary (min, max) {
