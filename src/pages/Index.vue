@@ -7,7 +7,9 @@
     </div>
     <div class="row q-pa-sm q-col-gutter-md">
       <div class="col-8">
-        <apex-line />
+        <q-card class="fit">
+          <apex-line />
+        </q-card>
       </div>
       <div class="col-4">
         <q-card class="fit">
