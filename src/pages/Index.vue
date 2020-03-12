@@ -22,9 +22,9 @@
             align="justify"
             narrow-indicator
           >
-            <q-tab name="mails" label="Mails" />
-            <q-tab name="alarms" label="Alarms" />
-            <q-tab name="movies" label="Movies" />
+            <q-tab name="mails" label="Mails" icon="mail" />
+            <q-tab name="alarms" label="Alarms" icon="alarm" />
+            <q-tab name="movies" label="Movies" icon="tv" />
           </q-tabs>
           <q-tab-panels v-model="tab" animated>
             <q-tab-panel name="mails">
