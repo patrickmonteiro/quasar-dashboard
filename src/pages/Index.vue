@@ -1,147 +1,70 @@
 <template>
   <q-page class="container bg-grey-1">
     <div class="q-pa-sm row q-col-gutter-md">
-      <div class="col-3" v-for="item in 4" :key="item">
-        <q-card>
-          <q-card-section>
-            <div class="col-6">
-              <div class="text-h4">
-                15.000
-              </div>
-              <div class="text-body1 q-pl-sm">
-                teste
-              </div>
-            </div>
-            <div class="col-6">
-              <q-icon name="calendar_today" size="xl" class="absolute-bottom-right q-pb-sm q-pr-sm" color="grey-7" />
-            </div>
-          </q-card-section>
-        </q-card>
+      <div class="col-3" v-for="(item, index) in dataMiniCard" :key="index">
+        <mini-card :value="item.value" :description="item.description" :icon="item.icon" ></mini-card>
       </div>
     </div>
-    <div class="row q-pa-sm">
+    <div class="row q-pa-sm q-col-gutter-md">
       <div class="col-8">
-        <apexchart ref="realtimeChart" type="line" height="400" :options="chartOptions" :series="series" />
+        <q-card class="fit">
+          <apex-line />
+        </q-card>
       </div>
       <div class="col-4">
-          <q-card class="fit">
-            <q-tabs
-              v-model="tab"
-              dense
-              class="text-grey"
-              active-color="primary"
-              indicator-color="primary"
-              align="justify"
-              narrow-indicator
-            >
-              <q-tab name="mails" label="Mails" />
-              <q-tab name="alarms" label="Alarms" />
-              <q-tab name="movies" label="Movies" />
-            </q-tabs>
+        <q-card class="fit">
+          <q-tabs
+            v-model="tab"
+            dense
+            class="text-grey"
+            active-color="primary"
+            indicator-color="primary"
+            align="justify"
+            narrow-indicator
+          >
+            <q-tab name="mails" label="Mails" />
+            <q-tab name="alarms" label="Alarms" />
+            <q-tab name="movies" label="Movies" />
+          </q-tabs>
+          <q-tab-panels v-model="tab" animated>
+            <q-tab-panel name="mails">
+              <div class="text-h6">Mails</div>
+              <apex-donut />
+            </q-tab-panel>
 
-            <q-separator />
+            <q-tab-panel name="alarms">
+              <div class="text-h6">Alarms</div>
+              <apex-donut />
+            </q-tab-panel>
 
-            <q-tab-panels v-model="tab" animated>
-              <q-tab-panel name="mails">
-                <div class="text-h6">Mails</div>
-                <apex-donut />
-              </q-tab-panel>
-              <q-tab-panel name="alarms">
-                <div class="text-h6">Mails</div>
-                <apex-donut />
-              </q-tab-panel>
-            </q-tab-panels>
-          </q-card>
-        </div>
+            <q-tab-panel name="movies">
+              <div class="text-h6">Movies</div>
+              <apex-donut />
+            </q-tab-panel>
+          </q-tab-panels>
+        </q-card>
+      </div>
     </div>
   </q-page>
 </template>
 
 <script>
-import ApexDonut from 'components/ApexDonut'
 export default {
-  name: 'ApexLine',
+  name: 'Index',
   components: {
-    ApexDonut
+    ApexDonut: () => import('components/ApexDonut'),
+    ApexLine: () => import('components/ApexLine'),
+    MiniCard: () => import('components/MiniCards')
   },
   data () {
     return {
-      tab: 'mails',
-      series: [{
-        name: 'Desktops',
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 99]
-      }],
-      chartOptions: {
-        colors: ['#FCCF31', '#17ead9', '#f02fc2'],
-        chart: {
-          height: 350,
-          type: 'line'
-        },
-        grid: {
-          show: true,
-          strokeDashArray: 0,
-          xaxis: {
-            lines: {
-              show: true
-            }
-          }
-        },
-        stroke: {
-          curve: 'smooth'
-        },
-        dropShadow: {
-          enabled: true,
-          opacity: 0.3,
-          blur: 5,
-          left: -7,
-          top: 22
-        },
-        dataLabels: {
-          enabled: false
-        },
-        title: {
-          text: 'Line',
-          align: 'left',
-          style: {
-            color: '#000000'
-          }
-        },
-        xaxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-          labels: {
-            style: {
-              colors: '#000000'
-            }
-          }
-        },
-        yaxis: {
-          labels: {
-            style: {
-              color: '#000000'
-            }
-          }
-        }
-      }
-    }
-  },
-  mounted () {
-    // this.setDataLineChart()
-  },
-  methods: {
-    getRandomArbitrary (min, max) {
-      return Math.floor(Math.random() * 99)
-    },
-    setDataLineChart () {
-      setInterval(() => {
-        this.series[0].data.splice(0, 1)
-        this.series[0].data.push(this.getRandomArbitrary(0, 99))
-        this.updateSeriesLine()
-      }, 3000)
-    },
-    updateSeriesLine () {
-      this.$refs.realtimeChart.updateSeries([{
-        data: this.series[0].data
-      }], false, true)
+      dataMiniCard: [
+        { value: '2.000', description: 'Food', icon: 'fastfood' },
+        { value: '1.500', description: 'Rent', icon: 'house' },
+        { value: '20.000', description: 'Employees', icon: 'person' },
+        { value: '900', description: 'Education', icon: 'book' }
+      ],
+      tab: 'mails'
     }
   }
 }
