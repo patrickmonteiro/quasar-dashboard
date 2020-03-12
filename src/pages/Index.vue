@@ -1,17 +1,17 @@
 <template>
   <q-page class="container bg-grey-1">
     <div class="q-pa-sm row q-col-gutter-md">
-      <div class="col-3" v-for="(item, index) in dataMiniCard" :key="index">
+      <div class="col-xs-12 col-sm-6 col-lg-3" v-for="(item, index) in dataMiniCard" :key="index">
         <mini-card :value="item.value" :description="item.description" :icon="item.icon" ></mini-card>
       </div>
     </div>
     <div class="row q-pa-sm q-col-gutter-md">
-      <div class="col-8">
+      <div class="col-xs-12 col-lg-8">
         <q-card class="fit">
           <apex-line />
         </q-card>
       </div>
-      <div class="col-4">
+      <div class="col-xs-12 col-lg-4">
         <q-card class="fit">
           <q-tabs
             v-model="tab"
