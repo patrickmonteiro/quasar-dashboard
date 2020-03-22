@@ -1,5 +1,5 @@
 <template>
-  <apexchart ref="realtimeChart" type="line" height="400" :options="chartOptions" :series="series" />
+  <apexchart ref="realtimeChart" type="line" height="300" :options="chartOptions" :series="series" />
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <apexchart type="donut" height="250" :options="chartOptions" :series="series" />
+  <apexchart type="donut" height="200" :options="chartOptions" :series="series" />
 </template>
 
 <script>
@@ -19,10 +19,10 @@ export default {
         },
         labels: ['Apple', 'Mango', 'Orange', 'Watermelon'],
         responsive: [{
-          breakpoint: 300,
+          breakpoint: 200,
           options: {
             chart: {
-              width: 350
+              width: 200
             },
             legend: {
               position: 'bottom'
