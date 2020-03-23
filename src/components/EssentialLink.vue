@@ -1,9 +1,9 @@
 <template>
   <q-item
     clickable
-    tag="a"
-    target="_blank"
-    :href="link"
+    :to="route"
+    exact
+    v-ripple
   >
     <q-item-section
       v-if="icon"
@@ -13,10 +13,7 @@
     </q-item-section>
 
     <q-item-section>
-      <q-item-label>{{ title }}</q-item-label>
-      <q-item-label caption>
-        {{ caption }}
-      </q-item-label>
+      <q-item-label class="text-weight-medium">{{ title }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
@@ -35,9 +32,9 @@ export default {
       default: ''
     },
 
-    link: {
+    route: {
       type: String,
-      default: '#'
+      default: '/'
     },
 
     icon: {
