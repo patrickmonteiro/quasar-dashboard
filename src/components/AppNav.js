@@ -1,10 +1,5 @@
 /* eslint-disable */
 
-/**
- * Code fragment of a official quasar docs app
- * Reference: https://github.com/quasarframework/quasar/blob/dev/docs/src/components/AppMenu.js
-**/
-
 import {
   QExpansionItem,
   QItem,
