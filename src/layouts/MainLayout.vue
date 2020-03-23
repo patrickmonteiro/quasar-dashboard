@@ -30,6 +30,15 @@
       content-class="bg-grey-2"
       :width="250"
     >
+      <q-item-label
+        header
+        class="text-grey-8"
+      >
+        Dashboard
+      </q-item-label>
+      
+      <app-nav></app-nav>
+
       <q-list
         class="text-grey-7"
       >
@@ -46,7 +55,6 @@
         />
       </q-list>
     </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -55,10 +63,12 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink'
+import AppNav from '../components/AppNav'
 
 export default {
   name: 'MainLayout',
   components: {
+    AppNav,
     EssentialLink
   },
   data () {
