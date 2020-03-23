@@ -4,8 +4,8 @@
       v-model="tab"
       dense
       class="text-grey"
-      active-color="primary"
-      indicator-color="primary"
+      active-color="blue-5"
+      indicator-color="blue-5"
       align="justify"
       narrow-indicator
     >

@@ -1,5 +1,5 @@
 <template>
-  <q-card>
+  <q-card v-ripple:primary class="mini-card">
     <q-card-section>
       <div class="col-6">
         <div class="text-h4">
@@ -32,3 +32,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.mini-card {
+  cursor: pointer;
+}
+</style>

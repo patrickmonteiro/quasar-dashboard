@@ -15,6 +15,11 @@
         <tabs-donut />
       </div>
     </div>
+    <div class="row q-pa-sm q-col-gutter-md">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <list-transactions />
+      </div>
+    </div>
   </q-page>
 </template>
 
@@ -24,7 +29,8 @@ export default {
   components: {
     ApexLine: () => import('components/ApexLine'),
     MiniCard: () => import('components/MiniCards'),
-    TabsDonut: () => import('components/TabsDonut')
+    TabsDonut: () => import('components/TabsDonut'),
+    ListTransactions: () => import('components/ListTransactions')
   },
   data () {
     return {
