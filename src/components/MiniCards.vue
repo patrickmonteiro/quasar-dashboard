@@ -1,5 +1,5 @@
 <template>
-  <q-card>
+  <q-card v-ripple>
     <q-card-section>
       <div class="col-6">
         <div class="text-h4">
