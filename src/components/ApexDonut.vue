@@ -1,5 +1,5 @@
 <template>
-  <apexchart type="donut" height="250" :options="chartOptions" :series="series" />
+  <apexchart type="donut" height="200" :options="chartOptions" :series="series" />
 </template>
 
 <script>
@@ -7,30 +7,27 @@ export default {
   name: 'ApexDonut',
   data () {
     return {
-      series: [44, 55, 41, 17, 15],
+      series: [44, 55, 41],
       chartOptions: {
         colors: ['#008FFB', '#00E396', '#FEB019'],
-        title: {
-          text: 'Donut',
-          align: 'left',
-          style: {
-            color: '#000000'
-          }
+        dataLabels: {
+          enabled: false
         },
-        labels: ['Apple', 'Mango', 'Orange', 'Watermelon'],
         responsive: [{
-          breakpoint: 300,
+          breakpoint: 480,
           options: {
             chart: {
-              width: 350
+              width: 250,
+              height: 400
             },
             legend: {
               position: 'bottom'
             }
           }
         }],
+        labels: ['Apple', 'Mango', 'Orange'],
         legend: {
-          height: 400,
+          height: 100,
           labels: {
             colors: '#000000'
           }

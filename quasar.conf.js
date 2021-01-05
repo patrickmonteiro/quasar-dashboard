@@ -23,7 +23,7 @@ module.exports = function (ctx) {
       // 'mdi-v4',
       // 'fontawesome-v5',
       // 'eva-icons',
-      // 'themify',
+      'themify',
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
@@ -46,10 +46,10 @@ module.exports = function (ctx) {
       all: 'auto',
 
       components: [],
-      directives: [],
+      directives: ['Ripple'],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['AppFullscreen']
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
