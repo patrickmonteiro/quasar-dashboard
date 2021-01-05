@@ -1,17 +1,12 @@
 <template>
   <q-page class="container bg-grey-1">
     <div class="q-pa-sm row q-col-gutter-md">
-<<<<<<< HEAD
       <div class="col-xs-12 col-sm-6 col-lg-3" v-for="(item, index) in dataMiniCard" :key="index">
         <mini-card
           :value="item.value"
           :description="item.description"
           :icon="item.icon"
         />
-=======
-      <div class="col-xs-12 col-sm-6 col-lg-3 col-md-3" v-for="(item, index) in dataMiniCard" :key="index">
-        <mini-card :value="item.value" :description="item.description" :icon="item.icon" ></mini-card>
->>>>>>> ffef1497e10adc39fd850876cb1f90b40af97cdf
       </div>
     </div>
     <div class="row q-pa-sm q-col-gutter-md">

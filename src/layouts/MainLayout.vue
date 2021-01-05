@@ -36,7 +36,7 @@
       >
         Dashboard
       </q-item-label>
-      
+
       <app-nav></app-nav>
 
       <q-list
